@@ -9,10 +9,9 @@ class Asteroid(CircleShape):
         self.radius = radius
 
     def draw(self, screen):
-        pygame.draw.circle(surface, (255, 255, 255), (int(self.x), int(self.y)), self.radius, 2)
+        pygame.draw.circle(screen, "white", (int(self.position.x), int(self.position.y)), self.radius, 2)
 
     def update(self, dt):
         displacement = self.velocity * dt
-        self.x += displacement.x
-        self.y += displacement.y
+        self.position += displacement
     
