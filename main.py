@@ -44,7 +44,10 @@ def main():
         for asteroid1 in asteroids:
             for shot1 in shots:
                 if shot1.collision(asteroid1):
+                    shot1.kill()
                     asteroid1.kill()
+                    asteroid1.split()
+                    break
         screen.fill((0, 0, 0))
         for sprite in drawable:
             sprite.draw(screen)
